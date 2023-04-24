@@ -1,0 +1,27 @@
+{% extends 'base.html'%} {% block content %} {% load static %}
+
+<section>
+    <div id="login" class="register pt-5 pb-5">
+        <h3 class="tex_center text_orange mb-5 ">Login Portals</h3>
+        <form action="{% url 'login' %}" method="POST">
+            {%csrf_token%}
+            <div class="d_colum">
+                <div class="d_colum">
+                    <label for="email">Email</label>
+                    <input type="email" name='email' placeholder="Email">
+                </div>
+                <div class="d_colum mt-3">
+                    <label for="">Password</label>
+                    <input type="password" name="password" id="" placeholder="Password">
+                </div>
+            </div>
+            <div class="pl-5">
+                <button type="submit" class="login btn btn-sm btn-outline-warning  mt-3">Login</button>
+            </div>
+        </form>
+
+    </div>
+</section>
+
+
+{% endblock %}

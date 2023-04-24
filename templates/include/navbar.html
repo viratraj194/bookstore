@@ -1,0 +1,59 @@
+{% load static %}
+<section>
+    <nav class="d_flex tex_center">
+        <div class="nav_left d_flex align_center">
+            <div class="logo">
+                <a href="{%url 'home'%}" class="circle">
+                    <img src="{% static 'img/logo.png' %}" width="200" alt="">
+                </a>
+            </div>
+            <div class="category b_radius ">
+                <a href="/OurStory/html/category.html" class="d_flex btn_radius">
+                    <i class="fa fa-sliders">&nbsp;Category</i>
+
+                </a>
+            </div>
+
+        </div>
+        <div class="nav_center ">
+            <ul class="d_flex">
+                <a href="">
+                    <li>Home</li>
+                </a>
+                <a href="">
+                    <li>Books Area</li>
+                </a>
+            </ul>
+        </div>
+        <div class="nav_right d_flex align_center">
+            <div class="search ">
+                <input type="search" name="" id="" placeholder="search..">
+                <span class="search-icon"><i class="fa fa-search"></i></span>
+            </div>
+            {% if user.is_authenticated%}
+            <div class="my_account ">
+                <a href="{% url 'dashboard' %}">
+                    {%if user_profile.profile_picture%}
+                    <img src="{{user_profile.profile_picture.url}}" width="50" alt="" class="circle">
+                    {% else %}
+                    <img src="{% static 'img/persion.jpg' %}" width="50" alt="" class="circle">
+                    {% endif %}
+                </a>
+            </div>
+            {% else %}
+            <div class="my_account ">
+                <a href="{% url 'login' %}" style="font-size: 20px ; color: orange; font-weight: bold;">
+                    Login
+                </a>
+            </div>
+            <div class="" style="color: silver; font-weight: bold; font-size: 20px;">\</div>
+            <div class="my_account">
+                <a href="{% url 'registerUser' %}" style="font-size: 20px ; color: orange; font-weight: bold;">
+                    RegisterUser
+                </a>
+            </div>
+            {% endif %}
+        </div>
+    </nav>
+    <hr style="border-bottom: 1px solid silver; ">
+</section>

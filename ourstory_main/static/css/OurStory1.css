@@ -1,0 +1,575 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css");
+* {
+    box-sizing: content-box;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.body {
+    background-color: rgba(236, 238, 238, 0.307);
+}
+
+
+/* nav bar  */
+
+nav {
+    padding: 10px;
+    justify-content: space-between;
+}
+
+.category {
+    margin-left: 10px;
+    font-size: x-large;
+    background-color: #cdd3ee94;
+    padding: 8px;
+    font-weight: bold;
+}
+
+.nav_center ul {
+    position: relative;
+    top: 20px;
+    justify-content: space-between;
+}
+
+.nav_center ul a {
+    margin: 0 10px;
+    color: gray;
+    font-size: large;
+}
+
+.nav_right input {
+    outline: none;
+    border: 2px solid rgb(213, 211, 211);
+    padding-left: 10px;
+    border-radius: 6px;
+    height: 35px;
+    width: 225px;
+}
+
+.search {
+    position: relative;
+    margin: 0 10px;
+}
+
+input[type="search"] {
+    width: 100%;
+    padding-right: 30px;
+    text-decoration: none;
+    /* add space for icon */
+}
+
+.search-icon {
+    position: absolute;
+    cursor: pointer;
+    right: 10px;
+    top: 50%;
+    color: rgb(213, 211, 211);
+    transform: translateY(-50%);
+}
+
+.contan {
+    margin: 20px;
+    justify-content: center;
+}
+
+.summary {
+    margin: 10px;
+    width: 700px;
+    background: url(../img/s.jpg);
+    padding: 20px;
+    background-size: cover;
+    background-position: center;
+}
+
+.summary::before {
+    content: '';
+    /* position: absolute; */
+    display: block;
+    height: 120px;
+    ;
+}
+
+.summary h1 {
+    font-size: 60px;
+}
+
+.summary .dis p {
+    color: rgb(152, 145, 145)
+}
+
+.dis .buttons a {
+    margin: 0 10px
+}
+
+.category_list {
+    width: 80%;
+    margin: auto;
+}
+
+.category_list ul {
+    justify-content: space-between;
+}
+
+.category_list ul a {
+    margin: 10px;
+    width: 200px;
+    padding: 20px;
+    color: black;
+    text-align: center;
+    border-radius: 8px
+}
+
+.famous_book_title h2 {
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.famous_book_title h6 {
+    font-size: 20px;
+    color: rgb(118, 113, 113);
+    background-color: rgb(200, 223, 241);
+    padding: 15px;
+}
+
+.book {
+    width: 278px;
+    /* background-color: aqua; */
+    overflow: hidden;
+    border: 1px solid silver;
+}
+
+.book_card {
+    width: 278px;
+    /* background-color: aqua; */
+    overflow: hidden;
+    border: 1px solid silver;
+    margin-right: 20px;
+    flex-shrink: 0;
+    transition: transform 0.5s ease-in-out;
+}
+
+.book .book_content {
+    padding: 10px;
+}
+
+.book_card .book_content {
+    padding: 10px;
+}
+
+.book_content span {
+    background-color: rgb(218, 250, 250);
+    color: rgb(70, 171, 171);
+    padding: 5px;
+}
+
+.book_cover {
+    border: 2px solid silver;
+}
+
+.book_content small {
+    color: silver;
+    font-size: 15px;
+}
+
+.slide_book {
+    background-color: #eaeef474;
+    padding: 20px;
+    box-shadow: 4px 6px 6px 4px rgb(198, 198, 198);
+}
+
+.books_content {
+    margin: auto 10px;
+    position: relative;
+    top: 50px;
+    padding: 20px;
+    justify-content: center;
+    border-radius: 8px;
+    text-align: left;
+    /* background-color: rgb(218, 223, 243); */
+}
+
+.books_content span {
+    background-color: rgb(218, 250, 250);
+    color: rgb(70, 171, 171);
+    padding: 5px;
+}
+
+.books_content small {
+    color: rgb(165, 162, 162);
+}
+
+.cards-container {
+    display: flex;
+    flex-wrap: nowrap;
+    width: 101%;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.be_writer {
+    height: 200px;
+    width: 80%;
+    /* justify-content: center; */
+    padding: 50px;
+    margin: 100px auto;
+    align-items: center;
+    background-image: url(../img/bg3.jpg);
+    background-size: cover;
+    background-position: center;
+    color: white;
+}
+
+.be_writer h5 {
+    font-size: 30px;
+}
+
+.be_writer .d_flex {
+    justify-content: space-between;
+}
+
+.be_writer span {
+    width: 698px;
+}
+
+
+/* swiper  */
+
+swiper-container {
+    width: 100%;
+    height: 100%;
+}
+
+swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+/* swiped  */
+
+
+/* category **********************************/
+
+
+/* footer style and design  */
+
+footer {
+    background-color: white;
+    border: 1px solid silver;
+    padding: 20px;
+    margin: 10px;
+}
+
+.footer_details h3 {
+    color: orange;
+    font-weight: bold;
+}
+
+.footer_details p {
+    color: rgb(158, 156, 156);
+}
+
+.footer_details .bi {
+    color: rgb(158, 156, 156);
+    font-size: 30px;
+}
+
+.footer_details .bi-facebook:hover {
+    color: blue;
+}
+
+.footer_details .bi-whatsapp:hover {
+    color: green;
+}
+
+.dev h6 {
+    color: rgb(141, 140, 140);
+}
+
+.footer_details .bi-instagram:hover {
+    color: rgb(235, 31, 99);
+}
+
+.footer_details .bi-twitter:hover {
+    color: skyblue;
+}
+
+.footer_details .bi-linkedin:hover {
+    color: rgb(62, 62, 233);
+}
+
+.footer_link h4 {
+    color: orange;
+    font-weight: bold;
+}
+
+.footer_link a {
+    color: #333;
+}
+
+
+/* footer style and design  */
+
+
+/* registrations form  */
+
+.register {
+    margin: 20px auto;
+    width: 50%;
+    align-items: center;
+    justify-content: center;
+    background: url();
+    border: 2px solid orange;
+    border-radius: 8px;
+    box-shadow: 2px 2px 2px 2px silver;
+}
+
+.register div {
+    margin: auto;
+}
+
+form input {
+    outline: none;
+    height: 38px;
+    width: 205px;
+    border: 1px solid silver;
+    border-radius: 5px;
+    padding-left: 10px;
+}
+
+.register form button {
+    width: 130px;
+}
+
+.register form button:hover {
+    color: white;
+}
+
+.register h3 {
+    border-bottom: 2px solid silver;
+    padding-bottom: 10px;
+    margin: 0px 100px;
+}
+
+
+/* login styles */
+
+#login input {
+    width: 300px;
+}
+
+#login h3 {
+    margin: 0px 250px;
+}
+
+.login {
+    margin-left: 180px;
+}
+
+
+/* register form ends  */
+
+
+/* Dashboard styiling starts */
+
+.sidebar {
+    width: 200px;
+    background-color: #cdd3ee94;
+    height: fit-content;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.sidebar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.sidebar li {
+    margin-bottom: 10px;
+}
+
+.sidebar a {
+    display: block;
+    padding: 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 15px;
+    text-decoration: none;
+    color: #007bff;
+    transition: all 0.3s ease;
+}
+
+.sidebar a:hover {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.dashboard {
+    width: 80%;
+    margin: auto;
+}
+
+.dashboard_content {
+    width: 900px;
+    border: 1px solid silver;
+    border-radius: 8px;
+}
+
+.dashboard_content .cover {
+    background-color: #dad8d87b;
+    padding: 20px;
+    align-items: center;
+}
+
+.profile_details h5 {
+    font-size: 30px;
+}
+
+.profile_details small {
+    font-size: 20px;
+    color: gray;
+}
+
+.all_posts {
+    padding: 10px;
+}
+
+.all_post {
+    background-color: #dee1e1;
+    width: 149px;
+    border-radius: 8px;
+    overflow: hidden;
+    margin: 10px;
+}
+
+.dashboard_heading {
+    padding: 5px 20px;
+    background-color: #5ca1eb;
+    margin: 5px 10px;
+    border-radius: 8px;
+}
+
+.profile_update {
+    width: 600px;
+    margin: auto;
+}
+
+
+/* Dashboard styiling ends */
+
+
+/* phone styles  */
+
+@media only screen and (max-width: 480px) {
+    .nav_center {
+        display: flex;
+        box-sizing: border-box;
+        flex-wrap: wrap;
+        width: fit-content;
+    }
+    .nav_right {
+        width: fit-content;
+        margin: auto;
+        justify-content: space-between;
+    }
+    .nav_right,
+    .search,
+    .my_account {
+        margin: 0 20px;
+    }
+    .be_writer {
+        height: 408px;
+    }
+}
+
+
+/* hover  */
+
+.book:hover {
+    box-shadow: 6px 6px 8px 6px silver;
+}
+
+
+/* FontAwesome library for search icon */
+
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css');
+
+/* utils start */
+
+.active {
+    color: white !important;
+    background-color: #007bff;
+}
+
+.d_flex {
+    display: flex !important;
+    flex-wrap: wrap;
+}
+
+.d_colum {
+    display: flex;
+    flex-direction: column;
+}
+
+.d_block {
+    display: block;
+}
+
+.w-80 {
+    width: 80%;
+    margin: auto;
+}
+
+.circle {
+    height: 48px;
+    border-radius: 50% !important;
+}
+
+.align_center {
+    align-items: center;
+}
+
+.tex_center {
+    text-align: center;
+}
+
+.space_even {
+    justify-content: space-evenly;
+}
+
+.space_between {
+    justify-content: space-between;
+}
+
+.b_radius {
+    border-radius: 8px !important;
+}
+
+.text_orange {
+    color: orange;
+}
+
+.justfy_center {
+    margin: auto;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* utils end  */
