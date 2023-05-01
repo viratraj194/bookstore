@@ -376,9 +376,10 @@ form input {
     margin: 0px 250px;
 }
 
-.login {
+
+/* .login {
     margin-left: 180px;
-}
+} */
 
 
 /* register form ends  */
@@ -406,6 +407,7 @@ form input {
 
 .sidebar a {
     display: block;
+    margin: 5px 0px;
     padding: 10px;
     border-radius: 5px;
     font-weight: bold;
@@ -458,6 +460,21 @@ form input {
     margin: 10px;
 }
 
+.all_post .post_img {
+    width: 149px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.all_post .post_img:hover img {
+    transform: scale(1.2);
+    cursor: pointer;
+}
+
+.all_post .post_img img {
+    transition: transform 0.7s ease-in-out;
+}
+
 .dashboard_heading {
     padding: 5px 20px;
     background-color: #5ca1eb;
@@ -468,6 +485,48 @@ form input {
 .profile_update {
     width: 600px;
     margin: auto;
+}
+
+.category_form input {
+    width: 320px;
+}
+
+.category_form button {
+    width: 100px;
+}
+
+.categorys {
+    margin: 0px 20px;
+}
+
+.categorys ul li {
+    background-color: #d1e2f4;
+    padding: 10px;
+    border-radius: 8px;
+    margin: auto;
+    width: 500px;
+    color: gray;
+}
+
+.categorys ul li a {
+    margin: 0px 10px;
+}
+
+.poem_category select[name="category"] {
+    width: 150px;
+}
+
+.post_poem textarea {
+    width: 600px;
+    padding: 20px;
+}
+
+.post_poem input,
+textarea,
+select {
+    outline: none;
+    border: 1px solid silver;
+    border-radius: 8px;
 }
 
 

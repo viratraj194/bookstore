@@ -1,0 +1,75 @@
+{% extends 'base.html'%} {% block content %} {% load static %}
+
+<section>
+
+
+
+    <div class="dashboard">
+        <div class="d_flex space_between">
+            <div class="sidebar">
+                <ul>
+                    <a class="{% if 'accounts/dashboard' in request.path%} active {% endif %}" href="{%url 'dashboard'%}">
+                        <li>Dashboard</li>
+                    </a>
+
+                    <a class="{% if '/posts/add_posts/' in request.path%} active {% endif %}" href="">
+                        <li>Add Posts</li>
+                    </a>
+                    <a href="{% url 'profile_settings' %}">
+                        <li>Profile Settings</li>
+                    </a>
+                    <a href="{% url 'logout' %}">
+                        <li>Logout</li>
+                    </a>
+                </ul>
+            </div>
+            <div class="dashboard_content ">
+                {% comment %} cover section starts {% endcomment %}
+                <div class="cover_photo b_radius " style=" padding: 20px; background: url({% if user_profile.cover_photo %}{{user_profile.cover_photo.url}} {% else %} {% static 'img/bg1.jpg' %} {% endif %}) no-repeat center / cover;">
+                    <div class="cover b_radius d_flex  ">
+                        {%if user_profile.profile_picture%}
+                        <img src="{{user_profile.profile_picture.url}}" width="100" alt=""> {%else%}
+                        <img src="{% static 'img/persion.jpg' %}" width="100" alt=""> {%endif%}
+                        <div class="profile_details ml-5">
+                            <h5>{{user.first_name}} {{user.last_name}} <span style="color: gray; font-size: 15px;">@{{user.username}}</span></h5>
+
+                            <small><i class="bi bi-envelope-at"></i>&nbsp;{{user}}</small>
+                        </div>
+                    </div>
+                </div>
+                {% comment %} cover section ends {% endcomment %}
+                <div class="d_block dashboard_heading tex_center">
+                    <h3>Add Posts</h3>
+                </div>
+                <div class="all_posts ">
+                    <div class="d_flex space_even">
+                        <div class="title ml-5">
+                            <h3>All Posts</h3>
+                        </div>
+                        <a href="{%url 'add_poem_category'%}" class="btn btn-sm btn-success m-3">Add Category</a>
+                        <a href="{%url 'post_poem'%}" class="btn btn-sm btn-danger m-3">Post Poem</a>
+                        <a href="{%url 'add_poem_category'%}" class="btn btn-sm btn-info m-3">Add Story</a>
+                        
+                    </div>
+                    <hr> {%for category in categorys%}
+                    <div class="categorys">
+                        <ul>
+                            <li class="space_between d_flex">
+                                <h6>{{category}}</h6>
+
+                                <div class="d_flex space_between">
+                                    <a href="{%url 'edit_category' category.id %}"><i class="bi bi-pencil" style="color: rgb(68, 67, 67);"></i></a>
+                                    <a href="{% url 'delete_category' category.id %}"><i class="bi bi-trash3" style="color: red;"></i></a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    {%endfor%}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+{% endblock %}

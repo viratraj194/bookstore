@@ -38,7 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'accounts'
+    'accounts',
+    'posts',
 ]
 
 MIDDLEWARE = [
@@ -135,6 +136,15 @@ STATICFILES_DIRS = [
 MEDIA_URL = '/media/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+
+
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = '587'
+EMAIL_HOST_USER = 'rajofficial513@gmail.com'
+EMAIL_HOST_PASSWORD = 'qxqmxsywxvpqxgmx'
+EMAIL_USE_TLS = True
+DEFAULT_FROM_EMAIL = 'OurStory  <rajofficial513@gmail.com>'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field

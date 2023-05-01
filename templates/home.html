@@ -237,7 +237,13 @@
             <h5>Become a writer</h5>
             <div class="d_flex">
                 <span>Speedily say has suitable disposal add boy. On forth doubt miles of child. Exercise joy man children rejoiced. Yet uncommonly his ten who diminution astonished</span>
-                <a href="" class="btn btn-outline-warning">Start Writing today</a>
+                {% if user.is_athonticated %}
+                <a href="{% url 'account' %}" class="btn btn-outline-warning">Start Writing today</a>
+                
+                {% else %}
+                
+                <a href="{%url 'registerUser' %}" class="btn btn-outline-warning">Start Writing today</a>
+                {% endif %}
             </div>
         </div>
     </section>

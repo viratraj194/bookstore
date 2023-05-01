@@ -11,7 +11,7 @@
                     <a class="" href="{%url 'dashboard'%}">
                         <li>Dashboard</li>
                     </a>
-                    <a href="">
+                    <a href="{% url 'add_posts' %}">
                         <li>Add Posts</li>
                     </a>
                     <a class="{% if 'profile_settings' in request.path%} active {%endif%}" href="{% url 'profile_settings' %}">
