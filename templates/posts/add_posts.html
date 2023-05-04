@@ -44,14 +44,15 @@
                 <div class="all_posts ">
                     <div class="d_flex space_even">
                         <div class="title ml-5">
-                            <h3>All Posts</h3>
+                            <h3>All Category</h3>
                         </div>
                         <a href="{%url 'add_poem_category'%}" class="btn btn-sm btn-success m-3">Add Category</a>
                         <a href="{%url 'post_poem'%}" class="btn btn-sm btn-danger m-3">Post Poem</a>
-                        <a href="{%url 'add_poem_category'%}" class="btn btn-sm btn-info m-3">Add Story</a>
-                        
+
+                        <a href="{%url 'post_story' %}" class="btn btn-sm btn-info m-3">Add Story</a>
+
                     </div>
-                    <hr> {%for category in categorys%}
+                    <hr> {% if categorys %} {%for category in categorys%}
                     <div class="categorys">
                         <ul>
                             <li class="space_between d_flex">
@@ -64,11 +65,65 @@
                             </li>
                         </ul>
                     </div>
-                    {%endfor%}
+                    {%endfor%} {% else %}
+                    <div class="tex_center m-3 pb-3">
+                        <small><i class="bi bi-emoji-frown" style="font-size: 50px; color: gray;"></i></small>
+                        <h4>Sorry you have not Contributed any category To category lists!!</h4>
+
+                    </div>
+                    {% endif %}
                 </div>
+                {%for story in storys %}
+                <div class="storyandpoems ">
+                    <div class="d_flex space_between story_edit ">
+                        <div class="d_flex  space_between align_center">
+                            <img src="{{story.story_cover_photo.url}}" alt="">
+                            <h5 style="color: rgb(209, 136, 1);" class="ml-5"><i class="bi bi-journal-text"></i> {{story}}</h5>
+                            <span class="ml-3" style="color: silver;">Story</span>
+                        </div>
+                        <div class="d_flex space_between">
+                            <a href="{% url 'post_story_edit' story.id %}"><i class="bi bi-pencil" style="color: rgb(68, 67, 67);"></i></a>
+                            <a href="{% url 'post_story_delete' story.id %}"><i class="bi bi-trash3" style="color: red;"></i></a>
+                        </div>
+                    </div>
+                </div>
+                {%endfor%} {%for poem in poems %}
+                <div class="storyandpoems ">
+                    <div class="d_flex space_between story_edit ">
+                        <div class="d_flex  space_between align_center">
+                            <img src="{{poem.cover_image.url}}" alt="">
+                            <h5 style="color: rgb(209, 136, 1);" class="ml-5"><i class="bi bi-journal-text"></i> {{poem}}</h5>
+                            <span class="ml-3" style="color: silver;">Poem</span>
+                        </div>
+                        <div class="d_flex space_between">
+                            <a href="{% url 'post_poem_edit' poem.id %}"><i class="bi bi-pencil" style="color: rgb(68, 67, 67);"></i></a>
+                            <a href="{% url 'post_poem_delete' poem.id %}"><i class="bi bi-trash3" style="color: red;"></i></a>
+                        </div>
+                    </div>
+                </div>
+                {%endfor%}
             </div>
         </div>
     </div>
+    <script>
+        // Get all div elements with class "box"
+        const boxes = document.querySelectorAll('.storyandpoems');
+
+        // Define an array of 3 colors
+        const colors = ["#cdecec", "#e5ffbd", "#ffdbe1"];
+
+        // Generate a random number between 0 and 2 to select a color from the array
+        function getRandomColor() {
+            const index = Math.floor(Math.random() * 3);
+            return colors[index];
+        }
+
+        // Apply a random color to each box
+        boxes.forEach(function(box) {
+            box.style.backgroundColor = getRandomColor();
+        });
+    </script>
+
 </section>
 
 

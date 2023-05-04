@@ -7,6 +7,7 @@ from django.contrib.auth.tokens import default_token_generator
 from django.template.defaultfilters import slugify
 from accounts.models import User, UserProfile
 from accounts.utils import send_verification_email
+from posts.models import PostPoem, PostStory
 
 
 @login_required(login_url='login')
@@ -92,7 +93,14 @@ def logout(request):
 
 @login_required(login_url='login')
 def dashboard(request):
-    return render(request,'accounts/dashboard.html')
+    poems = PostPoem.objects.filter(user = request.user)
+    storys = PostStory.objects.filter(user = request.user)
+    print(storys)
+    context = {
+        'poems':poems,
+        'storys':storys,
+    }
+    return render(request,'accounts/dashboard.html',context)
 
 @login_required(login_url='login')
 def profile_settings(request):

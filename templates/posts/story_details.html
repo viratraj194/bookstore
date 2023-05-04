@@ -1,0 +1,41 @@
+{% extends 'base.html'%} {% block content %} {% load static %}
+<div class="poem_details">
+    {% if story %}
+    <div class="poem_detail ">
+        <button class="btn btn-secondary btn-sm float-right" onclick="history.back()"><i class="fa fa-angle-left" aria-hidden="true"></i> &nbsp; Back</button>
+        <div class="title">
+            <h3><i class="bi bi-book"></i> {{story}}</h3>
+            <h6 style="border-bottom: 1px solid red;"> <i class="bi bi-tags"></i> {{story.category}}</h6>
+        </div>
+        <div class="poem_image justfy_center">
+            <img class="" src="{{story.story_cover_photo.url}}" alt="">
+        </div>
+        <div class="full_poem m-3">
+            <p style="height: fit-content; ">
+                {{story.story_content|linebreaksbr }}
+            </p>
+            <hr style="color: rebeccapurple; box-shadow: 2px 2px 2px blue;">
+            <span style="border-bottom: 1px solid black;"><i class="bi bi-file-text"></i> Summary</span>
+            <p class="p-3"> {{story.story_summary}}</p>
+            <h6><small>Author:</small> {{story.author_name}}</h6>
+        </div>
+    </div>
+    {% endif %}
+
+
+</div>
+<div class="comment_section mt-5">
+    <div class="card">
+        <div class="card-header d_flex">
+            <img src="{% static 'img/persion.jpg'%}" width="20" alt=""> Featured
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">Special title treatment</h5>
+            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

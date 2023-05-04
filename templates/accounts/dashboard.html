@@ -42,10 +42,12 @@
 
                 </div>
                 <div class="all_posts  d_flex space_even ">
-
+                    {% if storys or poems %} {% for poem in poems %}
                     <div class="all_post">
                         <div class="post_img">
-                            <img src="{% static 'img/cover1.webp'%}" width="150" alt="">
+                            <a href="{% url 'poem_details' poem.poem_slug %}">
+                                <img src="{{poem.cover_image.url}}" width="150" alt="">
+                            </a>
                         </div>
                         <div class="post_likes d_flex space_even">
                             <i class="bi bi-heart">500</i>
@@ -53,9 +55,17 @@
 
                         </div>
                     </div>
+                    {% endfor %} 
+                   
+
+                   
+                    
+                    {% for story in storys %}
                     <div class="all_post">
                         <div class="post_img">
-                            <img src="{% static 'img/cover2.webp'%}" width="150" alt="">
+                            <a href="{% url 'story_details' story.story_slug %}">
+                                <img src="{{story.story_cover_photo.url}}" width="150" alt="">
+                            </a>
                         </div>
                         <div class="post_likes d_flex space_even">
                             <i class="bi bi-heart">500</i>
@@ -63,86 +73,16 @@
 
                         </div>
                     </div>
-                    <div class="all_post">
-                        <div class="post_img">
-                            <img src="{% static 'img/cover3.webp'%}" width="150" alt="">
-                        </div>
-                        <div class="post_likes d_flex space_even">
-                            <i class="bi bi-heart">500</i>
-                            <i class="bi bi-share"></i>
-
-                        </div>
+                    {% endfor %}
+                    {% else %}
+                   <div class="tex_center m-3">
+                        <small><i class="bi bi-emoji-frown" style="font-size: 50px; color: gray;"></i></small>
+                        <h4>Sorry you don't have any Post</h4>
+                        <a href="{% url 'add_posts' %}" class="btn btn-sm btn-outline-danger">Post</a>
                     </div>
-                    <div class="all_post">
-                        <div class="post_img">
-                            <img src="{% static 'img/cover4.webp'%}" width="150" alt="">
-                        </div>
-                        <div class="post_likes d_flex space_even">
-                            <i class="bi bi-heart">500</i>
-                            <i class="bi bi-share"></i>
+                    {% endif %}
+                    
 
-                        </div>
-                    </div>
-                    <div class="all_post">
-                        <div class="post_img">
-                            <img src="{% static 'img/cover4.webp'%}" width="150" alt="">
-                        </div>
-                        <div class="post_likes d_flex space_even">
-                            <i class="bi bi-heart">500</i>
-                            <i class="bi bi-share"></i>
-
-                        </div>
-                    </div>
-                    <div class="all_post">
-                        <div class="post_img">
-                            <img src="{% static 'img/cover4.webp'%}" width="150" alt="">
-                        </div>
-                        <div class="post_likes d_flex space_even">
-                            <i class="bi bi-heart">500</i>
-                            <i class="bi bi-share"></i>
-
-                        </div>
-                    </div>
-                    <div class="all_post">
-                        <div class="post_img">
-                            <img src="{% static 'img/cover4.webp'%}" width="150" alt="">
-                        </div>
-                        <div class="post_likes d_flex space_even">
-                            <i class="bi bi-heart">500</i>
-                            <i class="bi bi-share"></i>
-
-                        </div>
-                    </div>
-                    <div class="all_post">
-                        <div class="post_img">
-                            <img src="{% static 'img/cover2.webp'%}" width="150" alt="">
-                        </div>
-                        <div class="post_likes d_flex space_even">
-                            <i class="bi bi-heart">500</i>
-                            <i class="bi bi-share"></i>
-
-                        </div>
-                    </div>
-                    <div class="all_post">
-                        <div class="post_img">
-                            <img src="{% static 'img/cover5.webp'%}" width="150" alt="">
-                        </div>
-                        <div class="post_likes d_flex space_even">
-                            <i class="bi bi-heart">500</i>
-                            <i class="bi bi-share"></i>
-
-                        </div>
-                    </div>
-                    <div class="all_post">
-                        <div class="post_img">
-                            <img src="{% static 'img/cover6.webp'%}" width="150" alt="">
-                        </div>
-                        <div class="post_likes d_flex space_even">
-                            <i class="bi bi-heart">500</i>
-                            <i class="bi bi-share"></i>
-
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>

@@ -1,0 +1,87 @@
+{% extends 'base.html'%} {% block content %} {% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+</head>
+
+<body class="body ">
+    <section3>
+        <div class="category_list">
+            <ul class="d_flex ">
+
+                <a href="" style="background-color:rgba(228, 228, 154, 0.563) ;">
+                    <li>
+                        <!-- <i class="bi bi-emoji-smile"></i> -->
+                        <h5>100+</h5>
+                        <span>Happy Category</span>
+                    </li>
+                </a>
+
+                <a href="" style="background-color:rgba(216, 209, 209, 0.455) ;">
+                    <li>
+                        <h5>100+</h5>
+                        <span>Happy Category</span>
+                    </li>
+                </a>
+
+                <a href="" style="background-color: rgba(194, 202, 231, 0.773) ;">
+                    <li>
+                        <h5>100+</h5>
+                        <span>Happy Category</span> </li>
+                </a>
+
+                <a href="" style="background-color:rgb(217, 250, 245) ;">
+                    <li>
+                        <h5>100+</h5>
+                        <span>Happy Category</span> </li>
+                </a>
+
+                <a href="" style="background-color: rgb(249, 187, 228);">
+                    <li>
+                        <h5>100+</h5>
+                        <span>Happy Category</span>
+                    </li>
+                </a>
+            </ul>
+        </div>
+    </section3>
+
+    <div class="all_poems d_flex space_between ">
+        {% for story in storys %}
+        <div class="poem d_flex m-3">
+            <div class="image">
+                <img src="{{story.story_cover_photo.url}}" alt="Story Cover Photo">
+
+            </div>
+            <div class="poem_content">
+                <div class="content">
+                    <div class="d_flex space_between">
+                        <h6>{{story.story_title}}</h6>
+                        <span><small>Author:</small>{{story.author_name}}</span>
+                    </div>
+
+                    <span style="color: rgb(109, 109, 254); font-weight: bold; border-bottom: 2px solid red;">{{story.category}}</span>
+                    <br>
+                    <small>summary</small>
+                    <p>{{story.story_summary}}</p>
+
+                    <h6 class=""> <span>Author:</span> {{story.author_name}}</h6>
+
+                </div>
+                <div class="poem_btns d_flex space_between ">
+                    <a href="" class="btn btn-sm btn-outline-success">Add to Library</a>
+                    <a href="{% url 'story_details' story.story_slug %}" class="btn btn-sm btn-outline-info">Read</a>
+
+                </div>
+            </div>
+
+        </div>
+        {% endfor %}
+
+    </div>
+</body>
+
+</html>
+{% endblock %}

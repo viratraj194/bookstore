@@ -1,6 +1,4 @@
-{% extends 'base.html'%} {% block content %}
-
-{% load static %}
+{% extends 'base.html'%} {% block content %} {% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,7 +7,7 @@
 </head>
 
 <body class="body">
-    
+
     <hr>
 
     <section2>
@@ -83,18 +81,20 @@
                 <h6 class="b_radius">Choose from hundreds of books from famous writers</h6>
             </div>
             <div class="d_flex">
-
+                {% for story in storys %}
                 <div class="book b_radius ml-3 mb-3">
                     <div class="book_cover">
-                        <img src="{% static 'img/cover1.webp' %}" style="width: 279px;
+                        <img src="{{story.story_cover_photo.url}}" style="width: 279px;
                         height: 350px;" alt="">
                     </div>
                     <div class="book_content">
                         <a href="#">
-                            <span class="mb-1 b_radius">Category</span>
+                            <span class="mb-1 b_radius">{{story.category}}</span>
                         </a>
-                        <h4>book title</h4>
-                        <small>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis, facere!</small>
+                        <div class="d_flex space_between">
+                            <h4>{{story.story_title}}</h4>
+                            <h5><small>Author:</small>&nbsp; {{story.author_name}}</h5>
+                        </div>
                         <hr>
                         <div class="d_flex space_between">
                             <a href="" class="btn btn-sm btn-success">add to library</a>
@@ -102,132 +102,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="book b_radius ml-3 mb-3">
-                    <div class="book_cover">
-                        <img src="{% static 'img/cover2.webp' %}" style="width: 279px;
-                        height: 350px;" alt="">
-                    </div>
-                    <div class="book_content">
-                        <a href="#">
-                            <span class="mb-1 b_radius">Category</span>
-                        </a>
-                        <h4>book title</h4>
-                        <small>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis, facere!</small>
-                        <hr>
-                        <div class="d_flex space_between">
-                            <a href="" class="btn btn-sm btn-success">add to library</a>
-                            <a href="" class="btn btn-sm btn-outline-info ">Read</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="book b_radius ml-3 mb-3">
-                    <div class="book_cover">
-                        <img src="{% static 'img/cover3.webp' %}" style="width: 279px;
-                        height: 350px;" alt="">
-                    </div>
-                    <div class="book_content">
-                        <a href="#">
-                            <span class="mb-1 b_radius">Category</span>
-                        </a>
-                        <h4>book title</h4>
-                        <small>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis, facere!</small>
-                        <hr>
-                        <div class="d_flex space_between">
-                            <a href="" class="btn btn-sm btn-success">add to library</a>
-                            <a href="" class="btn btn-sm btn-outline-info ">Read</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="book b_radius ml-3 mb-3">
-                    <div class="book_cover">
-                        <img src="{% static 'img/cover4.webp' %}" style="width: 279px;
-                        height: 350px;" alt="">
-                    </div>
-                    <div class="book_content">
-                        <a href="#">
-                            <span class="mb-1 b_radius">Category</span>
-                        </a>
-                        <h4>book title</h4>
-                        <small>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis, facere!</small>
-                        <hr>
-                        <div class="d_flex space_between">
-                            <a href="" class="btn btn-sm btn-success">add to library</a>
-                            <a href="" class="btn btn-sm btn-outline-info ">Read</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="book b_radius ml-3 mb-3">
-                    <div class="book_cover">
-                        <img src="{% static 'img/cover5.webp' %}" style="width: 279px;
-                        height: 350px;" alt="">
-                    </div>
-                    <div class="book_content">
-                        <a href="#">
-                            <span class="mb-1 b_radius">Category</span>
-                        </a>
-                        <h4>book title</h4>
-                        <small>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis, facere!</small>
-                        <hr>
-                        <div class="d_flex space_between">
-                            <a href="" class="btn btn-sm btn-success">add to library</a>
-                            <a href="" class="btn btn-sm btn-outline-info ">Read</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="book b_radius ml-3 mb-3">
-                    <div class="book_cover">
-                        <img src="{% static 'img/cover6.webp' %}" style="width: 279px;
-                        height: 350px;" alt="">
-                    </div>
-                    <div class="book_content">
-                        <a href="#">
-                            <span class="mb-1 b_radius">Category</span>
-                        </a>
-                        <h4>book title</h4>
-                        <small>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis, facere!</small>
-                        <hr>
-                        <div class="d_flex space_between">
-                            <a href="" class="btn btn-sm btn-success">add to library</a>
-                            <a href="" class="btn btn-sm btn-outline-info ">Read</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="book b_radius ml-3 mb-3">
-                    <div class="book_cover">
-                        <img src="../img/cover7.webp" style="width: 279px;
-                        height: 350px;" alt="">
-                    </div>
-                    <div class="book_content">
-                        <a href="#">
-                            <span class="mb-1 b_radius">Category</span>
-                        </a>
-                        <h4>book title</h4>
-                        <small>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis, facere!</small>
-                        <hr>
-                        <div class="d_flex space_between">
-                            <a href="" class="btn btn-sm btn-success">add to library</a>
-                            <a href="" class="btn btn-sm btn-outline-info ">Read</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="book b_radius ml-3 mb-3">
-                    <div class="book_cover">
-                        <img src="../img/cover8.webp" style="width: 279px;
-                        height: 350px;" alt="">
-                    </div>
-                    <div class="book_content">
-                        <a href="#">
-                            <span class="mb-1 b_radius">Category</span>
-                        </a>
-                        <h4>book title</h4>
-                        <small>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis, facere!</small>
-                        <hr>
-                        <div class="d_flex space_between">
-                            <a href="" class="btn btn-sm btn-success">add to library</a>
-                            <a href="" class="btn btn-sm btn-outline-info ">Read</a>
-                        </div>
-                    </div>
-                </div>
+                {% endfor %}
             </div>
         </div>
     </section4>
@@ -236,14 +111,10 @@
         <div class="be_writer b_radius">
             <h5>Become a writer</h5>
             <div class="d_flex">
-                <span>Speedily say has suitable disposal add boy. On forth doubt miles of child. Exercise joy man children rejoiced. Yet uncommonly his ten who diminution astonished</span>
-                {% if user.is_athonticated %}
-                <a href="{% url 'account' %}" class="btn btn-outline-warning">Start Writing today</a>
-                
-                {% else %}
-                
-                <a href="{%url 'registerUser' %}" class="btn btn-outline-warning">Start Writing today</a>
-                {% endif %}
+                <span>Speedily say has suitable disposal add boy. On forth doubt miles of child. Exercise joy man children rejoiced. Yet uncommonly his ten who diminution astonished</span> {% if user.is_athonticated %}
+                <a href="{% url 'account' %}" class="btn btn-outline-warning">Start Writing today</a> {% else %}
+
+                <a href="{%url 'registerUser' %}" class="btn btn-outline-warning">Start Writing today</a> {% endif %}
             </div>
         </div>
     </section>
@@ -252,206 +123,30 @@
     <section4>
         <div class="famous_books w-80">
             <swiper-container class="mySwiper" pagination="true" pagination-clickable="true" navigation="true" space-between="30" centered-slides="true" autoplay-delay="2500" autoplay-disable-on-interaction="false">
+                {% for poem in poems%}
+
                 <swiper-slide>
-                    <div class=" slide_book d_flex b_radius  ml-3 mb-3 ">
+                    <div class=" slide_book d_flex b_radius  ml-3 mb-3 m-5 ">
                         <div class="book_cover">
-                            <img src="../img/cover10.webp" style="width: 279px;
+                            <img src="{{poem.cover_image.url}}" style="width: 279px;
                             height: 350px;" alt="">
                         </div>
                         <div class="books_content">
                             <a href="#">
-                                <span class="mb-1 b_radius">Category</span>
+                                <span class="mb-1 b_radius">{{poem.category}}</span>
                             </a>
-                            <h4>book title</h4>
-                            <small>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis, facere!</small>
+                            <h4>{{poem}}</h4>
+                            <small>{{poem.post_overview}}</small>
                             <hr>
                             <div class="d_flex space_between">
                                 <a href="" class="btn btn-sm btn-success">add to library</a>
-                                <a href="" class="btn btn-sm btn-outline-info ">Read</a>
+                                <a href="{%url 'poem_details' poem.poem_slug %}" class="btn btn-sm btn-outline-info ">Read</a>
                             </div>
                         </div>
                     </div>
                 </swiper-slide>
-                <swiper-slide>
-                    <div class=" slide_book d_flex b_radius  ml-3 mb-3 ">
-                        <div class="book_cover">
-                            <img src="../img/cover8.webp" style="width: 279px;
-                            height: 350px;" alt="">
-                        </div>
-                        <div class="books_content">
-                            <a href="#">
-                                <span class="mb-1 b_radius">Category</span>
-                            </a>
-                            <h4>book title</h4>
-                            <small>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis, facere!</small>
-                            <hr>
-                            <div class="d_flex space_between">
-                                <a href="" class="btn btn-sm btn-success">add to library</a>
-                                <a href="" class="btn btn-sm btn-outline-info ">Read</a>
-                            </div>
-                        </div>
-                    </div>
-                </swiper-slide>
-                <swiper-slide>
-                    <div class=" slide_book d_flex b_radius  ml-3 mb-3 ">
-                        <div class="book_cover">
-                            <img src="../img/cover1.webp" style="width: 279px;
-                            height: 350px;" alt="">
-                        </div>
-                        <div class="books_content">
-                            <a href="#">
-                                <span class="mb-1 b_radius">Category</span>
-                            </a>
-                            <h4>book title</h4>
-                            <small>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis, facere!</small>
-                            <hr>
-                            <div class="d_flex space_between">
-                                <a href="" class="btn btn-sm btn-success">add to library</a>
-                                <a href="" class="btn btn-sm btn-outline-info ">Read</a>
-                            </div>
-                        </div>
-                    </div>
-                </swiper-slide>
-                <swiper-slide>
-                    <div class=" slide_book d_flex b_radius  ml-3 mb-3 ">
-                        <div class="book_cover b_radius">
-                            <img src="../img/cover2.webp" style="width: 279px;
-                            height: 350px;" alt="">
-                        </div>
-                        <div class="books_content">
-                            <a href="#">
-                                <span class="mb-1 b_radius">Category</span>
-                            </a>
-                            <h4>book title</h4>
-                            <small>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis, facere!</small>
-                            <hr>
-                            <div class="d_flex space_between">
-                                <a href="" class="btn btn-sm btn-success">add to library</a>
-                                <a href="" class="btn btn-sm btn-outline-info ">Read</a>
-                            </div>
-                        </div>
-                    </div>
-                </swiper-slide>
-                <swiper-slide>
-                    <div class=" slide_book d_flex b_radius  ml-3 mb-3 ">
-                        <div class="book_cover">
-                            <img src="../img/cover3.webp" style="width: 279px;
-                            height: 350px;" alt="">
-                        </div>
-                        <div class="books_content">
-                            <a href="#">
-                                <span class="mb-1 b_radius">Category</span>
-                            </a>
-                            <h4>book title</h4>
-                            <small>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis, facere!</small>
-                            <hr>
-                            <div class="d_flex space_between">
-                                <a href="" class="btn btn-sm btn-success">add to library</a>
-                                <a href="" class="btn btn-sm btn-outline-info ">Read</a>
-                            </div>
-                        </div>
-                    </div>
-                </swiper-slide>
-                <swiper-slide>
-                    <div class=" slide_book d_flex b_radius  ml-3 mb-3 ">
-                        <div class="book_cover">
-                            <img src="../img/cover4.webp" style="width: 279px;
-                            height: 350px;" alt="">
-                        </div>
-                        <div class="books_content">
-                            <a href="#">
-                                <span class="mb-1 b_radius">Category</span>
-                            </a>
-                            <h4>book title</h4>
-                            <small>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis, facere!</small>
-                            <hr>
-                            <div class="d_flex space_between">
-                                <a href="" class="btn btn-sm btn-success">add to library</a>
-                                <a href="" class="btn btn-sm btn-outline-info ">Read</a>
-                            </div>
-                        </div>
-                    </div>
-                </swiper-slide>
-                <swiper-slide>
-                    <div class=" slide_book d_flex b_radius  ml-3 mb-3 ">
-                        <div class="book_cover">
-                            <img src="../img/cover5.webp" style="width: 279px;
-                            height: 350px;" alt="">
-                        </div>
-                        <div class="books_content">
-                            <a href="#">
-                                <span class="mb-1 b_radius">Category</span>
-                            </a>
-                            <h4>book title</h4>
-                            <small>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis, facere!</small>
-                            <hr>
-                            <div class="d_flex space_between">
-                                <a href="" class="btn btn-sm btn-success">add to library</a>
-                                <a href="" class="btn btn-sm btn-outline-info ">Read</a>
-                            </div>
-                        </div>
-                    </div>
-                </swiper-slide>
-                <swiper-slide>
-                    <div class=" slide_book d_flex b_radius  ml-3 mb-3 ">
-                        <div class="book_cover">
-                            <img src="../img/cover6.webp" style="width: 279px;
-                            height: 350px;" alt="">
-                        </div>
-                        <div class="books_content">
-                            <a href="#">
-                                <span class="mb-1 b_radius">Category</span>
-                            </a>
-                            <h4>book title</h4>
-                            <small>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis, facere!</small>
-                            <hr>
-                            <div class="d_flex space_between">
-                                <a href="" class="btn btn-sm btn-success">add to library</a>
-                                <a href="" class="btn btn-sm btn-outline-info ">Read</a>
-                            </div>
-                        </div>
-                    </div>
-                </swiper-slide>
-                <swiper-slide>
-                    <div class=" slide_book d_flex b_radius  ml-3 mb-3 ">
-                        <div class="book_cover">
-                            <img src="../img/cover8.webp" style="width: 279px;
-                            height: 350px;" alt="">
-                        </div>
-                        <div class="books_content">
-                            <a href="#">
-                                <span class="mb-1 b_radius">Category</span>
-                            </a>
-                            <h4>book title</h4>
-                            <small>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis, facere!</small>
-                            <hr>
-                            <div class="d_flex space_between">
-                                <a href="" class="btn btn-sm btn-success">add to library</a>
-                                <a href="" class="btn btn-sm btn-outline-info ">Read</a>
-                            </div>
-                        </div>
-                    </div>
-                </swiper-slide>
-                <swiper-slide>
-                    <div class=" slide_book d_flex b_radius  ml-3 mb-3 ">
-                        <div class="book_cover">
-                            <img src="../img/cover7.webp" style="width: 279px;
-                            height: 350px;" alt="">
-                        </div>
-                        <div class="books_content">
-                            <a href="#">
-                                <span class="mb-1 b_radius">Category</span>
-                            </a>
-                            <h4>book title</h4>
-                            <small>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis, facere!</small>
-                            <hr>
-                            <div class="d_flex space_between">
-                                <a href="" class="btn btn-sm btn-success">add to library</a>
-                                <a href="" class="btn btn-sm btn-outline-info ">Read</a>
-                            </div>
-                        </div>
-                    </div>
-                </swiper-slide>
+                {% endfor %}
+
 
             </swiper-container>
 
@@ -460,8 +155,6 @@
         </div>
     </section4>
     <div class="mb-5"></div>
-
-
 
 </body>
 

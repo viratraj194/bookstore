@@ -40,6 +40,10 @@ nav {
     font-size: large;
 }
 
+.nav_center ul a:hover {
+    color: orange;
+}
+
 .nav_right input {
     outline: none;
     border: 2px solid rgb(213, 211, 211);
@@ -176,11 +180,13 @@ input[type="search"] {
 
 .slide_book {
     background-color: #eaeef474;
-    padding: 20px;
+    padding: 30px;
+    margin: 50px;
     box-shadow: 4px 6px 6px 4px rgb(198, 198, 198);
 }
 
 .books_content {
+    width: 500px;
     margin: auto 10px;
     position: relative;
     top: 50px;
@@ -472,6 +478,8 @@ form input {
 }
 
 .all_post .post_img img {
+    width: 100%;
+    height: 250px;
     transition: transform 0.7s ease-in-out;
 }
 

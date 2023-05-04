@@ -25,8 +25,8 @@ class PostPoem(models.Model):
     category = models.ForeignKey(Category,on_delete=models.CASCADE)
     post_title = models.CharField(max_length=50)
     poem_content = models.TextField(validators=[MinLengthValidator(100)])
-    slug = models.SlugField(max_length=100,unique=True)
-    post_overview = models.TextField(max_length=200)
+    poem_slug = models.SlugField(max_length=100,unique=True)
+    post_overview = models.TextField(max_length=500)
     author_name = models.CharField(max_length=50)
     cover_image = models.ImageField(upload_to='post_image')
     created_at = models.DateTimeField(auto_now_add=True)
@@ -34,3 +34,19 @@ class PostPoem(models.Model):
 
     def __str__(self):
         return self.post_title
+    
+class PostStory(models.Model):
+    user = models.ForeignKey(User,on_delete=models.CASCADE)
+    category = models.ForeignKey(Category,on_delete=models.CASCADE)
+    story_title = models.CharField(max_length=50)
+    story_content = models.TextField(validators=[MinLengthValidator(800)])
+    story_summary = models.TextField(max_length=500)
+    story_slug = models.SlugField(max_length=100,unique=True)
+    author_name = models.CharField(max_length=50,blank=True)
+    story_cover_photo = models.ImageField(upload_to='story_image')
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+
+    def __str__(self):
+        return self.story_title
