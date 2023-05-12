@@ -1,0 +1,101 @@
+{% extends 'base.html'%} {% block content %} {% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+</head>
+
+<body class="body ">
+    <div class="d_flex space_even">
+        <section3>
+            <div class="category_list">
+                <ul class="d_colum ">
+                    {%for category in categorys %}
+                    <a href="" class="catbg">
+                        <li>
+                            <h5>100+</h5>
+                            <span>{{category}}</span>
+                        </li>
+                    </a>
+                    {%endfor%}
+                </ul>
+            </div>
+        </section3>
+    
+        <div class="  d_colum space_between ">
+            {% for poem in poems %}
+            <div class="poem" style="display: flex; width: 800px; margin: 20px 50px;">
+                <div class="image" style="width: 526px;">
+                    <img src="{{poem.cover_image.url}}" alt="Poem image">
+                </div>
+                <div class="poem_content">
+                    <div class="content">
+                        <h6>{{poem}}</h6>
+                        <span style="color: rgb(109, 109, 254); font-weight: bold; border-bottom: 2px solid red;">{{poem.category}}</span>
+                        <br>
+                        <small>summary</small>
+                        <p>{{poem.post_overview}}</p>
+    
+                        <h6 class=""> <span>Author:</span> {{poem.author_name}}</h6>
+    
+                    </div>
+                    <div class="poem_btns d_flex space_between">
+                        <a href="" class="btn btn-sm btn-outline-success">Add to Library</a>
+                        <a href="{% url 'poem_details' poem.poem_slug %}" class="btn btn-sm btn-outline-info">Read</a>
+    
+                    </div>
+                </div>
+    
+            </div>
+            {% endfor %}
+            <!-- story -->
+            {% for story in storys %}
+            <div class="poem" style="display: flex; width: 800px; margin: 20px 50px;">
+                <div class="image" style="width: 526px;">
+                    <img src="{{story.story_cover_photo.url}}" alt="Poem image">
+                </div>
+                <div class="poem_content">
+                    <div class="content">
+                        <h6>{{story.story_title}}</h6>
+                        <span style="color: rgb(109, 109, 254); font-weight: bold; border-bottom: 2px solid red;">{{poem.category}}</span>
+                        <br>
+                        <small>summary</small>
+                        <p>{{story.story_summary}}</p>
+    
+                        <h6 class=""> <span>Author:</span> {{story.poem.author_name}}</h6>
+    
+                    </div>
+                    <div class="poem_btns d_flex space_between">
+                        <a href="" class="btn btn-sm btn-outline-success">Add to Library</a>
+                        <a href="{% url 'story_details' story.story_slug %}" class="btn btn-sm btn-outline-info">Read</a>
+    
+                    </div>
+                </div>
+    
+            </div>
+            {% endfor %}
+    
+        </div>
+    </div>
+</body>
+<script>
+    // Get all div elements with class "box"
+    const boxes = document.querySelectorAll('.catbg');
+
+    // Define an array of 3 colors
+    const colors = ["#e4e49a90", "#c2cae7c5", "#d9faf5","#d8d1d174","#f9bbe4"];
+
+    // Generate a random number between 0 and 2 to select a color from the array
+    function getRandomColor() {
+        const index = Math.floor(Math.random() * 3);
+        return colors[index];
+    }
+
+    // Apply a random color to each box
+    boxes.forEach(function(box) {
+        box.style.backgroundColor = getRandomColor();
+    });
+</script>
+</html>
+{% endblock %}

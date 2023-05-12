@@ -11,7 +11,7 @@
             <img src="{{poem.cover_image.url}}" alt="">
         </div>
         <div class="full_poem m-3">
-            <pre>
+            <pre class="">
                 {{poem.poem_content}}
             </pre>
             <hr style="color: rebeccapurple; box-shadow: 2px 2px 2px blue;">
@@ -25,14 +25,45 @@
 
 </div>
 <div class="comment_section mt-5">
-    <div class="card">
+    <hr>
+    <h3><i class="bi bi-person-heart"></i> Reader Review</h3>
+    <form action="">
+        {%csrf_token%}
+        <h6 class="mt-3 text-bold">Write Review</h6>
+        <div>
+            <label >How did you like teh poem?</label>
+            <br>
+            <div class="rate">
+                <input type="radio" name="rating" id="rating10" value="5" required >
+                <input type="radio" name="rating" id="rating9" value="4.5" required >
+                <input type="radio" name="rating" id="rating8" value="4" required >
+                <input type="radio" name="rating" id="rating7" value="3.5" required >
+                <input type="radio" name="rating" id="rating6" value="3" required >
+                <input type="radio" name="rating" id="rating5" value="2.5" required >
+                <input type="radio" name="rating" id="rating4" value="2" required >
+                <input type="radio" name="rating" id="rating3" value="1.5" required >
+                <input type="radio" name="rating" id="rating2" value="1" required >
+                <input type="radio" name="rating" id="rating1" value="0.5" required >
+            </div>
+
+            Review Title:
+            <input type="text" class="form-control" name="subject" placeholder="Title">
+            <br>
+            Review:
+            <textarea name="review" class="form-control" cols="122"  rows="4" placeholder="Write Review" ></textarea >
+            <br>
+            <input type="submit" value="Submit Review" class="btn-primary">
+        </div>
+    </form>
+
+    <div class="card mt-5">
         <div class="card-header d_flex">
             <img src="{% static 'img/persion.jpg'%}" width="20" alt=""> Featured
         </div>
         <div class="card-body">
             <h5 class="card-title">Special title treatment</h5>
             <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
+         
         </div>
     </div>
 </div>

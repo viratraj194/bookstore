@@ -73,6 +73,8 @@
 }
 
 .poem_details .poem_image {
+    align-items: center;
+    margin: auto;
     width: 400px;
     height: 400px;
     overflow: hidden;
@@ -97,6 +99,9 @@
     color: green;
     font-size: 20px;
     font-weight: bold;
+}
+.full_poem pre {
+    text-align: center;
 }
 
 .comment_section {
@@ -132,3 +137,33 @@
     background-color: rgb(207, 205, 205) !important;
     cursor: pointer;
 }
+/* stars css  */
+/* Hide default radio buttons */
+/* Hide Radio button */
+
+@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css);
+
+
+.rate > input{
+    display: none;
+  }
+  
+  .rate{
+    display: inline-block;;
+    border: 0;
+  }
+  
+  .rate > label{
+    float: right;
+  }
+  
+  /* Showing the stars */
+  .rate > label:before{
+    display: inline-block;
+    font-size: 1.1rem;
+    font-family: FontAwesome;
+    content: "\f005";
+    margin:0;
+    padding:0.3rem .2rem;
+    cursor: pointer;
+  }

@@ -227,3 +227,16 @@ def story_details(request,story_slug):
         'story':story
     }
     return render(request,'posts/story_details.html',context)
+
+
+def all_category(request):
+    categorys =  Category.objects.all()
+    poems = PostPoem.objects.all()[:5]
+    storys = PostStory.objects.all()[:5]
+    context = {
+        'poems':poems,
+        'storys':storys,
+        'categorys':categorys
+    }
+
+    return render(request,'posts/all_category.html',context)

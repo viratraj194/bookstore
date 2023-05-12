@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import Category, PostPoem,PostStory
+from .models import Category, PostPoem,PostStory,PoemReviewRating
 
 class CategoryAdmin(admin.ModelAdmin):
     prepopulated_fields = {'slug': ('category_name',)}
@@ -23,3 +23,4 @@ class PostStoryAdmin(admin.ModelAdmin):
 admin.site.register(PostStory,PostStoryAdmin)
 admin.site.register(Category, CategoryAdmin)
 admin.site.register(PostPoem,PostPoemAdmin)
+admin.site.register(PoemReviewRating)

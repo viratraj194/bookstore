@@ -18,5 +18,7 @@ urlpatterns = [
    path('add_posts/post_story/',views.post_story,name='post_story'),
    path('add_posts/post_story_edit/<int:pk>/',views.post_story_edit,name='post_story_edit'),
    path('add_posts/post_story_delete/<int:pk>/',views.post_story_delete,name='post_story_delete'),
-   path('story_details/<slug:story_slug>/',views.story_details,name='story_details')
+   path('story_details/<slug:story_slug>/',views.story_details,name='story_details'),
+
+   path("all_category/",views.all_category, name="all_category"),
 ]

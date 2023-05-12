@@ -66,8 +66,9 @@
                     <h6 class=""> <span>Author:</span> {{poem.author_name}}</h6>
 
                 </div>
-                <div class="poem_btns d_flex">
+                <div class="poem_btns d_flex space_between">
                     <a href="" class="btn btn-sm btn-outline-success">Add to Library</a>
+                    <a href="{% url 'poem_details' poem.poem_slug %}" class="btn btn-sm btn-outline-info">Read</a>
 
                 </div>
             </div>
