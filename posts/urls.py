@@ -21,4 +21,5 @@ urlpatterns = [
    path('story_details/<slug:story_slug>/',views.story_details,name='story_details'),
 
    path("all_category/",views.all_category, name="all_category"),
+     path('category/<int:pk>/',views.category_detail, name='category_detail'),
 ]

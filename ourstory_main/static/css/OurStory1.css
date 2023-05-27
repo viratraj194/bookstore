@@ -138,7 +138,9 @@ input[type="search"] {
     padding: 15px;
 }
 
+
 .book {
+    position: relative;
     width: 278px;
     /* background-color: aqua; */
     overflow: hidden;
@@ -171,6 +173,39 @@ input[type="search"] {
 
 .book_cover {
     border: 2px solid silver;
+    width: 300px;
+    height: 300px;
+    overflow: hidden;
+    position: relative;
+}
+.book_cover .book_sum{
+   position: absolute;
+   width: 280px;
+   bottom: 0;
+   left: 0;
+   height: 0;
+   background-color: rgba(251, 237, 217, 0.607);
+   color: rgb(0, 0, 0);
+   transition: height 0.7s ease;
+}
+.book_cover .book_sum h6{
+    padding: 10px;
+   
+    
+}
+
+
+.book_cover:hover .book_sum{
+    height: 300px;
+}
+
+.book_cover img{
+    width: 100%;
+    height: 100%;
+    transition: transform 0.5s ease;
+}
+.book_cover:hover img{
+    transform: scale(1.2);
 }
 
 .book_content small {

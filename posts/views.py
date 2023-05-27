@@ -240,3 +240,15 @@ def all_category(request):
     }
 
     return render(request,'posts/all_category.html',context)
+
+def category_detail(request,pk=None):
+    category = Category.objects.get(pk=pk)
+    categorys =  Category.objects.all()
+    poems = PostPoem.objects.filter(category=category)
+    print(poems)
+    context = {
+        'category':category,
+        'poems':poems,
+        'categorys':categorys
+    }
+    return render(request,'posts/all_category.html',context)
